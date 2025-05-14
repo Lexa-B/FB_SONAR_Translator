@@ -1,0 +1,17 @@
+[project]
+name = "fb-sonar-translator"
+version = "0.0.0"
+description = "A toy example of a translator using SONAR and MarianMT"
+requires-python = ">=3.8"
+dependencies = [
+    "sonar-space>=0.4.0",
+    "transformers>=4.51.0",
+    "sentencepiece>=0.2.0"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true 
