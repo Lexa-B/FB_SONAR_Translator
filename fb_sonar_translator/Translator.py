@@ -1,9 +1,16 @@
 # SONAR Japanese to English Translator - Complete Version
 
+import warnings
+# Filter torchaudio backend warning from skops
+warnings.filterwarnings('ignore', category=UserWarning, module='skops.io._utils')
+warnings.filterwarnings('ignore', message='.*Torchaudio\'s I/O functions.*')
+
 from sonar.inference_pipelines.text import TextToEmbeddingModelPipeline
 from transformers import MarianMTModel, MarianTokenizer
+from wtpsplit import SaT
 import re
 import os
+import torch
 
 class SONARJapaneseToEnglishTranslator:
     def __init__(self):
@@ -12,6 +19,10 @@ class SONARJapaneseToEnglishTranslator:
             encoder='text_sonar_basic_encoder',
             tokenizer='text_sonar_basic_encoder'
         )
+        # Initialize SaT with GPU support if available
+        self.segmenter = SaT("sat-3l-sm")
+        if torch.cuda.is_available():
+            self.segmenter.to("cuda")
         # Initialize MarianMT for Japanese to English translation
         self.tokenizer = MarianTokenizer.from_pretrained("Helsinki-NLP/opus-mt-ja-en")
         self.model = MarianMTModel.from_pretrained("Helsinki-NLP/opus-mt-ja-en")
@@ -24,9 +35,8 @@ class SONARJapaneseToEnglishTranslator:
         return text
 
     def split_sentences(self, text):
-        # Split using Japanese and English sentence-ending punctuation
-        sentences = re.split(r'(?<=[。！？\.\?\!])\s*', text)
-        return [s.strip() for s in sentences if s.strip()]
+        # Use SaT for sentence segmentation
+        return self.segmenter.split(text)
 
     def translate_sentence(self, sentence):
         # Translate a single Japanese sentence to English using MarianMT

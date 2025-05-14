@@ -33,4 +33,5 @@ type = "index"
 packages = ["fb_sonar_translator"]
 
 [tool.hatch.dependencies]
-torch = {version = "2.7.0", source = "pytorch"} 
+torch = {version = "2.6.0", source = "pytorch"}
+torchaudio = {version = "2.6.0", source = "pytorch"} 
