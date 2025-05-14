@@ -2,11 +2,14 @@
 name = "fb-sonar-translator"
 version = "0.0.0"
 description = "A toy example of a translator using SONAR and MarianMT"
-requires-python = ">=3.8"
+requires-python = ">=3.12"
 dependencies = [
+    "fairseq2",
     "sonar-space>=0.4.0",
-    "transformers>=4.51.0",
-    "sentencepiece>=0.2.0"
+    "transformers>=4.48.3,<4.49.0",
+    "sentencepiece>=0.2.0",
+    "wtpsplit[onnx-gpu]>=2.0.0",
+    "sacremoses>=0.0.53"
 ]
 
 [build-system]
@@ -15,3 +18,19 @@ build-backend = "hatchling.build"
 
 [tool.hatch.metadata]
 allow-direct-references = true 
+
+[[tool.hatch.source]]
+name = "fairseq2"
+url = "https://fair.pkg.atmeta.com/fairseq2/whl/pt2.7.0/cu126"
+type = "index"
+
+[[tool.hatch.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu126"
+type = "index"
+
+[tool.hatch.build.targets.wheel]
+packages = ["fb_sonar_translator"]
+
+[tool.hatch.dependencies]
+torch = {version = "2.7.0", source = "pytorch"} 
