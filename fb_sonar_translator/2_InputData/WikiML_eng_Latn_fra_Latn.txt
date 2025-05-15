@@ -1,0 +1,8 @@
+Crédit: https://en.wikipedia.org/wiki/Machine_learning
+Le machine learning (ML) est un domaine d'étude dans l'intelligence artificielle qui s'intéresse au développement et à l'étude des algorithmes statistiques qui peuvent apprendre des données et les généraliser à des données invisibles, et donc effectuer des tâches sans instructions explicites. [1]
+Dans une sous-discipline de l'apprentissage automatique, les progrès dans le domaine de l'apprentissage en profondeur ont permis aux réseaux neuronaux, une classe d'algorithmes statistiques, de dépasser de nombreuses approches antérieures de l'apprentissage automatique en termes de performances. [2]
+L'intelligence artificielle trouve une application dans de nombreux domaines, y compris le traitement du langage naturel, la vision par ordinateur, la reconnaissance vocale, le filtrage du courrier électronique, l'agriculture et la médecine.
+L'application de ML aux problèmes d'affaires est connue sous le nom d'analyse prédictive.
+Les méthodes de statistiques et d'optimisation mathématique (programmation mathématique) constituent les bases de l'apprentissage automatique.
+L'exploration de données est un domaine d'étude connexe, axé sur l'analyse exploratoire des données (EDA) par l'apprentissage sans surveillance. [1] [2]
+D'un point de vue théorique, l'apprentissage approximativement correct fournit un cadre pour décrire l'apprentissage machine.

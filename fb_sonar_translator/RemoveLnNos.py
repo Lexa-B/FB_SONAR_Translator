@@ -1,5 +1,6 @@
 import re
 import os
+import argparse
 
 class RemoveLnNos:
     def clean_text_file(self, input_file: str, output_file: str):
@@ -20,18 +21,17 @@ class RemoveLnNos:
 
 # Example usage
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Remove line numbers from a text file.')
+    parser.add_argument('-i', '--input_file', type=str, required=True, help='Input file to remove line numbers from.')
+    args = parser.parse_args()
+
     # Get the directory where this script is located
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     cleaner = RemoveLnNos()
     cleaner.clean_text_file(
-        os.path.join(script_dir, "Examples", "松山鏡ーThe_Mirror_of_Matsuyamaー日本語.txt"),
-        os.path.join(script_dir, "InputData", "松山鏡ーThe_Mirror_of_Matsuyamaー日本語_Clean.txt")
+        os.path.join(script_dir, "1_RawExamples", args.input_file),
+        os.path.join(script_dir, "2_InputData", f"{args.input_file}_Clean.txt")
     )
 
-    cleaner.clean_text_file(
-        os.path.join(script_dir, "Examples", "松山鏡ーThe_Mirror_of_Matsuyamaー英語.txt"),
-        os.path.join(script_dir, "InputData", "松山鏡ーThe_Mirror_of_Matsuyamaー英語_Clean.txt")
-    )
-
-    print("Cleaning complete! The cleaned files are ready.")
+    print("Cleaning complete! The cleaned file is ready.")

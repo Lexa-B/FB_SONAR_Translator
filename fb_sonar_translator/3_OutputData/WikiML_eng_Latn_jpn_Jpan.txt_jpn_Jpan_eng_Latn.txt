@@ -1,0 +1,5 @@
+I'm not going to go into detail here.
+Machine learning (ML) is an area of artificial intelligence that studies and analyzes statistical algorithms that can learn from data, extend it to invisible data, and perform tasks without explicit instruction.[1] In a subset of machine learning, advances in the field of deep learning have made it possible for neural networks, in a class of mathematical algorithms, to outperform many previous approaches to machine learning performance.[2]
+ML applications have been applied in many fields, including language processing, computer vision, recognition language, mail filtering, agriculture, and medicine.[3][4] The application of ML to business problems is known as predictive analytics.[5]
+The methods of statistics and mathematical optimization are the basis of machine learning.
+Data mining is an area of research that focuses on exploratory data analysis (EDA) through unsupervised learning.[1][2] From a theoretical perspective, probably right-handed learning provides a framework for describing machine learning.

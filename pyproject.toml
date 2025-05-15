@@ -1,13 +1,11 @@
 [project]
 name = "fb-sonar-translator"
 version = "0.0.0"
-description = "A toy example of a translator using SONAR and MarianMT"
+description = "A toy example of a Concept-Based Translator using FAIR's SONAR"
 requires-python = ">=3.12"
 dependencies = [
     "fairseq2",
     "sonar-space>=0.4.0",
-    "transformers>=4.48.3,<4.49.0",
-    "sentencepiece>=0.2.0",
     "wtpsplit[onnx-gpu]>=2.0.0",
     "sacremoses>=0.0.53"
 ]
